@@ -8,8 +8,18 @@ $ cd circuit-breaker-analytics && npm install
 $ DEBUG=circuit-breaker-analytics:* ./bin/www
 ```
 
-### Todo's
- - ...
+### Information To Track
+ - Successful requests
+ - Rejected or short - circuited requests
+ - Timeouts
+ - Rejections
+ - Failures/Exceptions
+ - Number of hosts reporting
+ - Response time per request
+ - Circuit breaker status
+ - Error percentage for last 10 seconds
+ - Request rate per second
+ - Track host and IP to dig down to where error is happening
 
 
 ### License
