@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET dashboard page */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Circuit Breaker Analytics' });
+  res.render('dashboard', { title: 'Circuit Breaker Analytics Dashboard' });
 });
 
 module.exports = router;

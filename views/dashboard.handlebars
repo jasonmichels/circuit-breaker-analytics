@@ -1,0 +1,184 @@
+<div class="row">
+    <div class="col-md-12 page-header">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<script>
+    google.load('visualization', '1', {packages: ['corechart', 'line']});
+    google.setOnLoadCallback(drawBasic);
+
+    function drawBasic() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Requests');
+
+        data.addRows([
+            [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+            [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+            [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+            [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+            [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+            [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+            [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+            [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+            [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+            [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+            [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+            [66, 70], [67, 72], [68, 75], [69, 80]
+        ]);
+
+        var options = {
+            hAxis: {
+                title: 'Time'
+            },
+            vAxis: {
+                title: 'Requests'
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div_1'));
+
+        chart.draw(data, options);
+    }
+</script>
+
+<div class="row">
+    <div class="col-md-9">
+        <div id="chart_div_1"></div>
+    </div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12 lead">
+                <strong>CreateHistoryCommand Mongodb</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 lead">
+                <span class="text-muted">Host:</span> <strong>1254/s</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert">
+                    <span class="lead"><span class="text-muted">Circuit</span> <strong>Closed</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 lead">
+                <span class="text-muted">Error:</span> <span class="text-warning"><strong>2%</strong></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 lead">
+                <span class="text-muted">Mean:</span> <span class="text-success"><strong>4ms</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 bg-success padded">
+        Successes <span class="badge">12,948</span>
+    </div>
+    <div class="col-md-3 bg-danger padded">
+        Rejected <span class="badge">1</span>
+    </div>
+    <div class="col-md-3 bg-warning padded">
+        Timeouts <span class="badge">3</span>
+    </div>
+    <div class="col-md-3 bg-danger padded">
+        Exceptions <span class="badge">0</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="dashed-line"></div>
+    </div>
+</div>
+
+<script>
+    google.load('visualization', '1', {packages: ['corechart', 'line']});
+    google.setOnLoadCallback(drawBasic);
+
+    function drawBasic() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Requests');
+
+        data.addRows([
+            [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+            [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+            [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+            [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+            [36, 50], [37, 45], [38, 35], [39, 40], [40, 20], [41, 10]
+        ]);
+
+        var options = {
+            hAxis: {
+                title: 'Time'
+            },
+            vAxis: {
+                title: 'Requests'
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div_2'));
+
+        chart.draw(data, options);
+    }
+</script>
+
+<div class="row">
+    <div class="col-md-9">
+        <div id="chart_div_2"></div>
+    </div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12 lead">
+                <strong>CreditCardPayCommand PayPal</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 lead">
+                <span class="text-muted">Host:</span> <strong>29/s</strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert">
+                    <span class="lead"><span class="text-muted">Circuit</span> <strong>Open</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 lead">
+                <span class="text-muted">Error:</span> <span class="text-danger"><strong>99%</strong></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 lead">
+                <span class="text-muted">Mean:</span> <span class="text-danger"><strong>356ms</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 bg-success padded">
+        Successes <span class="badge">12</span>
+    </div>
+    <div class="col-md-3 bg-danger padded">
+        Rejected <span class="badge">839</span>
+    </div>
+    <div class="col-md-3 bg-warning padded">
+        Timeouts <span class="badge">356</span>
+    </div>
+    <div class="col-md-3 bg-danger padded">
+        Exceptions <span class="badge">23</span>
+    </div>
+</div>
