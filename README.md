@@ -8,6 +8,19 @@ $ cd circuit-breaker-analytics && npm install
 $ DEBUG=circuit-breaker-analytics:* ./bin/www
 ```
 
+### Installation With Docker For Development
+```sh
+$ cd circuit-breaker-analytics && npm install
+$ docker build -t <name>/circuit-breaker-analytics .
+$ docker run -it -p 3001:3001 -e "PORT=3001" -e "NODE_ENV=development" -e "NODE_MONGODB_URL=change ip/host" -e "NODE_MONGODB_DATABASE_NAME=circuit-breaker-analytics" --rm --name circuit-breaker-analytics <name>/circuit-breaker-analytics
+```
+
+### Dependencies
+ - Running Mongodb server. Suggest using docker and https://registry.hub.docker.com/u/tutum/mongodb/
+ ```sh
+ $ docker run -d -e AUTH=no -p 27017:27017 -p 28017:28017 tutum/mongodb
+ ```
+
 ### Information To Track
  - Successful requests
  - Rejected or short - circuited requests
