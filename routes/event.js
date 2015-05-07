@@ -12,9 +12,9 @@ router.post('/', function(req, res, next) {
     var eventRepo = new EventRepository();
 
     eventRepo.on('success', function (result) {
-        console.log('success inserting into mongodb');
+        // had a good insert. Nothing to do here. This could even be deleted
     }).on('error', function (err) {
-        console.log('error inserting into mongodb');
+        // had a problem inserting, may need to log error somewhere
     });
 
     eventRepo.insertOrUpdateIfExists(collectionKey, json);

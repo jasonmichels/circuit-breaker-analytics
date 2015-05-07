@@ -1,6 +1,7 @@
 var util         = require("util");
 var EventEmitter = require("events").EventEmitter;
 var Mongo = require('../lib/mongodb');
+var io = require('../lib/io');
 
 function EventRepository () {
     EventEmitter.call(this);
@@ -45,6 +46,9 @@ EventRepository.prototype.insertOrUpdateIfExists = function (collectionKey, json
     database.on('success', function(collection) {
 
         collection.updateOne(json, json, {upsert:true}, function(err, result) {
+            if (!err) {
+                io.sockets.emit('eventWasCreated', json);
+            }
             self.respond(err, result);
         });
 
