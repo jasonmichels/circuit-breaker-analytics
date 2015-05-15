@@ -10,10 +10,19 @@ $ DEBUG=circuit-breaker-analytics:* ./bin/www
 
 ### Installation With Docker For Development
 ```sh
-$ cd circuit-breaker-analytics && npm install
+$ cd circuit-breaker-analytics
 $ docker build -t <name>/circuit-breaker-analytics .
 $ docker run -it -p 3001:3001 -e "PORT=3001" -e "NODE_ENV=development" -e "NODE_MONGODB_URL=change ip/host" -e "NODE_MONGODB_DATABASE_NAME=circuit-breaker-analytics" --rm --name circuit-breaker-analytics <name>/circuit-breaker-analytics
 ```
+
+### Production installation with Restart
+```sh
+$ docker run -d --restart=always -p 3001:3001 -e "PORT=3001" -e "NODE_ENV=production" -e "NODE_MONGODB_URL=change ip/host" -e "NODE_MONGODB_DATABASE_NAME=circuit-breaker-analytics" --name circuit-breaker-analytics <name>/circuit-breaker-analytics
+```
+
+### Debugging
+To debug ExpressJS framework during development, add the following environment variable to the docker run command
+- DEBUG=circuit-breaker-analytics:*
 
 ### Dependencies
  - Running Mongodb server. Suggest using docker and https://registry.hub.docker.com/u/tutum/mongodb/

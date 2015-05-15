@@ -1,7 +1,17 @@
 {
   "name": "circuit-breaker-analytics",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "This is a microservice designed to store and display events for status of services being tracked",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Jason Michels",
+    "url" : "http://jasonmichels.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonmichels/circuit-breaker-analytics"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
